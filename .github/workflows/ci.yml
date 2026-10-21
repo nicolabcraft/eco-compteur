@@ -1,0 +1,37 @@
+# Verifie chaque contribution : compilation et paquet de test.
+name: CI
+
+on:
+  push:
+    branches: [main, dev]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: Compilation et paquet
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      # Assemblies d'Eco : paquet NuGet officiel Eco.ReferenceAssemblies.
+      - name: Compiler le mod
+        run: dotnet build -c Release
+
+      - name: Fabriquer le paquet de test
+        run: node tools/package.mjs "$(cat VERSION)-dev.${GITHUB_RUN_NUMBER}"
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Compteur-dev
+          path: release/*.zip
