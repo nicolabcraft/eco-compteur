@@ -2,6 +2,11 @@
 
 <p align="center"><a href="https://github.com/sponsors/nicolabcraft"><img src="https://img.shields.io/badge/Sponsor-%E2%9D%A4-ea4aaa?logo=githubsponsors&logoColor=white" alt="Sponsor"></a></p>
 
+> [!WARNING]
+> **Projet abandonné et archivé.** Un mod serveur ne peut pas afficher de compteur à l'écran pendant la conduite : le panneau « Commandes » du véhicule ignore le texte envoyé, et les messages d'information s'empilent au lieu de se remplacer. La release 1.0.0 n'affiche rien en jeu : ne l'installez pas. Le jeu indique déjà le bonus du sol près de la minicarte (« Vitesse x0,9 (Terre) »).
+>
+> **Abandoned and archived.** A server mod cannot show a speedometer on screen while driving: the vehicle's Controls panel ignores the text it is sent, and info messages stack up instead of replacing each other. Release 1.0.0 shows nothing in game: do not install it. The game already shows the ground speed bonus next to the minimap.
+
 # Compteur : un compteur de vitesse pour les véhicules d'Eco
 
 Mod serveur pour **Eco** (Strange Loop Games). Pendant la conduite, l'aide du
